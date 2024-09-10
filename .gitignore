@@ -35,3 +35,5 @@ override.tf.json
 # Ignore CLI configuration files
 .terraformrc
 terraform.rc
+terraform-demo1/tfshow1.sh
+terraform-demo2/
