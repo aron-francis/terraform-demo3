@@ -55,11 +55,7 @@ resource "aws_lambda_function" "scheduled_start_stop" {
   timeout          = 30
   memory_size      = 128
 
-  environment {
-    variables = {
-      EC2_INSTANCE_IDS = join(",", var.ec2_instance_ids)
-    }
-  }
+  # Remove the environment block as we no longer need to pass instance IDs
 }
 
 # CloudWatch Event Rule for starting instances
@@ -119,7 +115,3 @@ data "archive_file" "lambda_zip" {
   output_path = "lambda-demo3/scheduled_start_stop.zip"
 }
 
-variable "ec2_instance_ids" {
-  description = "List of EC2 instance IDs to start and stop"
-  type        = list(string)
-}
