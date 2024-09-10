@@ -37,3 +37,4 @@ override.tf.json
 terraform.rc
 terraform-demo1/tfshow1.sh
 terraform-demo2/
+**/.terraform/*
